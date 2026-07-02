@@ -1,11 +1,63 @@
 #desktop {
 
     position: fixed;
-
     inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
 
     background: #0b1220;
 
-    display: none;
+}
+
+#taskbar {
+
+    position: fixed;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(20px);
+
+}
+
+#nova-button {
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: var(--accent);
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+#clock {
+
+    color: white;
+
+    font-size: 18px;
 
 }
