@@ -2,44 +2,92 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaOS</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Orizon OS</title>
+
+    <!-- CSS -->
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
+
     <link rel="stylesheet" href="css/boot.css">
     <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/taskbar.css">
+
 </head>
 
 <body>
 
-    <!-- Boot Screen -->
-    <div id="boot-screen">
-        <h1>NovaOS</h1>
-        <p>Initializing...</p>
-    </div>
+    <!-- ==========================
+         Boot Screen
+    =========================== -->
 
-    <!-- Desktop -->
-    <div id="desktop">
+    <section id="boot-screen">
 
-        <!-- Taskbar -->
-        <div id="taskbar">
+    <img
+        src="assets/logo/orizon-logo.png"
+        alt="Orizon OS Logo"
+        id="boot-logo"
+    >
 
-            <button id="nova-button">
-                N
-            </button>
+    <h1>Orizon OS</h1>
 
-            <div id="clock">
-                00:00
-            </div>
+    <p id="boot-text">
+        Initializing...
+    </p>
 
-        </div>
+</section>
 
-    </div>
+    <!-- ==========================
+         Desktop
+    =========================== -->
+
+    <main id="desktop">
+
+        <!-- Wallpaper -->
+
+        <div id="wallpaper"></div>
+
+        <!-- Desktop Icons -->
+
+        <section id="desktop-icons"></section>
+
+        <!-- Windows -->
+
+        <section id="windows"></section>
+
+    </main>
+
+    <!-- ==========================
+         Taskbar
+    =========================== -->
+
+    <footer id="taskbar">
+
+    </footer>
+
+    <!-- ==========================
+         Core
+    =========================== -->
+
+    <script src="core/os.js"></script>
+
+    <script src="core/windowManager.js"></script>
+
+    <!-- ==========================
+         JavaScript
+    =========================== -->
 
     <script src="js/boot.js"></script>
     <script src="js/desktop.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/taskbar.js"></script>
 
 </body>
 

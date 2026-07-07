@@ -1,77 +1,138 @@
+/* ==========================================
+   Orizon OS
+   Desktop
+   ========================================== */
+
+:root {
+
+    --desktop-padding: 20px;
+
+}
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background: #05080F;
+
+}
+
+body {
+
+    position: relative;
+
+}
+
+/* ==========================
+   Desktop
+========================== */
+
 #desktop {
-
-    position: fixed;
-    inset: 0;
-
-    width: 100vw;
-    height: 100vh;
 
     display: none;
 
-    background: #0b1220;
-
-}
-
-#taskbar {
-
-    position: fixed;
-
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-
-    height: 60px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 20px;
-
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, .08);
-
-    backdrop-filter: blur(20px);
-
-}
-
-#nova-button {
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    background: var(--accent);
-    color: white;
-
-    font-size: 18px;
-    font-weight: bold;
-
-}
-
-#clock {
-
-    color: white;
-
-    font-size: 18px;
-
-}
-#desktop {
-    position: fixed;
-    inset: 0;
-
-    display: none;
+    opacity: 0;
 
     width: 100vw;
+
     height: 100vh;
+
+}
+
+/* ==========================
+   Wallpaper
+========================== */
+
+#wallpaper {
+
+    position: absolute;
+
+    inset: 0;
 
     background-image: url("../assets/wallpapers/default.png");
-    background-size: cover;
+
     background-position: center;
+
+    background-size: cover;
+
     background-repeat: no-repeat;
+
+    z-index: 0;
+
+}
+
+/* ==========================
+   Desktop Icons
+========================== */
+
+#desktop-icons {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: var(--desktop-padding);
+
+    z-index: 10;
+
+}
+
+/* ==========================
+   Windows
+========================== */
+
+#windows {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+}
+
+/* هر پنجره بعداً این کلاس را می‌گیرد */
+
+.window {
+
+    pointer-events: auto;
+
+}
+
+/* ==========================
+   Selection Box
+========================== */
+
+.selection-box {
+
+    position: absolute;
+
+    border: 1px solid rgba(77, 166, 255, .8);
+
+    background: rgba(77, 166, 255, .15);
+
+    backdrop-filter: blur(4px);
+
+    display: none;
+
+}
+
+/* ==========================
+   Disable Image Selection
+========================== */
+
+img {
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
 }

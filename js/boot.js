@@ -1,32 +1,54 @@
-// NovaOS Boot System
+// ==========================================
+// Orizon OS Boot System
+// Version 1.0
+// ==========================================
 
-const bootScreen = document.querySelector("#boot-screen");
-const desktop = document.querySelector("#desktop");
-const loadingText = document.querySelector("#boot-screen p");
+const bootScreen = document.getElementById("boot-screen");
+const bootText = document.getElementById("boot-text");
+const desktop = document.getElementById("desktop");
 
-let dots = 0;
+const bootMessages = [
+    "Initializing Kernel",
+    "Loading System Files",
+    "Starting Services",
+    "Preparing Desktop",
+    "Welcome to Orizon OS"
+];
 
-const loadingAnimation = setInterval(() => {
+desktop.style.display = "none";
 
-    dots++;
+let messageIndex = 0;
 
-    if (dots > 3) dots = 1;
+function nextMessage() {
 
-    loadingText.textContent = "Initializing" + ".".repeat(dots);
+    if (messageIndex >= bootMessages.length) {
 
-}, 500);
+        bootScreen.style.opacity = "0";
 
-setTimeout(() => {
+        setTimeout(() => {
 
-    clearInterval(loadingAnimation);
+            bootScreen.style.display = "none";
 
-    loadingText.textContent = "Loading Desktop...";
+            desktop.style.display = "block";
 
-    setTimeout(() => {
+            desktop.style.opacity = "1";
 
-        bootScreen.style.display = "none";
-        desktop.style.display = "block";
+        }, 700);
 
-    }, 1000);
+        return;
 
-}, 3000);
+    }
+
+    bootText.textContent = bootMessages[messageIndex];
+
+    messageIndex++;
+
+    setTimeout(nextMessage, 700);
+
+}
+
+window.addEventListener("load", () => {
+
+    setTimeout(nextMessage, 600);
+
+});
